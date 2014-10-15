@@ -64,8 +64,8 @@
             \end{block}
             \begin{block}{What has changed?}
                 \begin{itemize} \itemindent50pt
-                    \item Error Profile (particularly context specific errors).
-                    \item Quality Score Binning by default.
+                    \item Chemistry and thus likely error profile.
+                    \item Quality Score now in 8 bins by default.
                     \item Read length increased to 150bp.
                     \item New Mappers available and required to take advantage of read length.
                 \end{itemize}
@@ -151,7 +151,7 @@ Ref & Set A & Set B & A Only & B Only & Intersect \\ \cline{1-6}
                 
                 \begin{figure}
                 \includegraphics[width=0.95\textwidth]{images/downsampling_fig1}
-                \caption{Rate of discovery of GIAB Genome Wide vs Downsampling Rate}
+                \caption{Rate of discovery of GIAB sites genome wide vs Downsampling rate}
                 \end{figure}
 
                 The downsampling analysis showed that whilst the FDR seems to remain constant by coverage at approximately 4 and 25 percent for SNPs and INDELs respectively, the number of variants discovered at increased depth decreases at an exponential rate.  Whilst approximately 15x seems to be capture more than 96\% of SNPs with only a small improvement at higher depths of coverage it only captures 69\% of INDELs and additional depth can improve these slightly.
@@ -161,7 +161,7 @@ Ref & Set A & Set B & A Only & B Only & Intersect \\ \cline{1-6}
                 The Illumina HiSeq X is a viable sequencing platform for our purposes and our proposed pipeline calls variants at an acceptable rate.  Our downsampling analysis suggests that for studies that are only interested in SNPs, the full coverage of a HiSeq X may be excessive but for discovering INDELs it is invaluable. Unfortunately the false discovery rate for INDELs remains high and suggests that our tools for these still need improvement in this respect. Since this work was started a new version of BWA has been proposed that supports mapping to alternate haplotypes, we plan to extend our analysis to incorporate an evaluation of the effects of mapping to these additional sequences.
             \end{block}
             \begin{block}{Acknowledgements}
-                The Sanger's NPG and Sequencing R\&D Team for providing the data. Joshua Randall for help with Graphs and R. Thomas Keene for editorial guidance.
+                The Sanger's NPG and Sequencing R\&D Team for providing the data. Thomas Keene for editorial guidance. Joshua Randall for help with Graphs and R.
             \end{block}
             \begin{block}{References}
                 [1] Zook, Justin M., Brad Chapman, Jason Wang, David Mittelman, Oliver Hofmann, Winston Hide, and Marc Salit. "Integrating Human Sequence Data Sets Provides a Resource of Benchmark Snp and Indel Genotype Calls." Nat Biotech 32, no. 3 (03//print 2014): 246-51.
