@@ -12,7 +12,7 @@
 \boldmath
  
 \title{Using haploid human DNA to design and evaluate the HiSeq X data processing strategy}
-\author{Martin O. Pollard, Thomas M. Keene, Shane A. McCarthy, Joshua C. Randall, Richard M. Durbin}
+\author{Martin O. Pollard, Thomas M. Keane, Shane A. McCarthy, Joshua C. Randall, Richard M. Durbin}
 \institute[Wellcome Trust Sanger Institute]{Wellcome Trust Sanger Institute}
 \date{Today}
 
@@ -92,8 +92,8 @@
 \begin{tabular}{|l|c|c|}
 \hline
 Sample  & Total SNPs Called & Hets \\ \cline{1-3} % & Hets from LCR & nRef Hom from LCR %
-CHM1 & 2,897,438 & 294,267  \\ \cline{1-3} %& 15665 & 78062%
-HAP1 & 2,943,962 & 324,009 \\ \cline{1-3} %& 16684 & 78080%
+CHM1 & 2,897,438 & 294,267  \\ %& 15665 & 78062%
+HAP1 & 2,943,962 & 324,009 \\ %& 16684 & 78080%
 Mix & 4,060,909 & 2,598,304   \\ \cline{1-3} % & &%
 \hline
 \end{tabular}
@@ -119,15 +119,15 @@ Mix & 4,060,909 & 2,598,304   \\ \cline{1-3} % & &%
 \begin{tabular}{|l|l|c|c|c|}
 \hline
 Ref & Pipeline & Called (TP) & In GIAB(FP) & Not Called (FN) \\ \cline{1-5}
-38 & Replicate 1 Samtools 1.1 & 62919 & 2937 & 701 \\ \cline{1-5}
-38 & Replicate 2 Samtools 1.1 & 62895 & 2890 & 725 \\ \cline{1-5}
-38 & Replicate 1 GATK HC 3.2 & 62883 & 2911 & 737 \\ \cline{1-5}
-38 & Replicate 2 GATK HC 3.2 & 62824 & 2768 & 796 \\ \cline{1-5}
-38 & Illm Plat GATK HC 3.2 & 62878 & 2792 & 742 \\ \cline{1-5}
-37 & Replicate 1 Samtools 1.1 & 63249 & 2721 & 703 \\ \cline{1-5}
-37 & Replicate 2 Samtools 1.1 & 63224 & 2686 & 728 \\ \cline{1-5}
-37 & Replicate 1 GATK HC 3.2 & 63211 & 2693 & 741 \\ \cline{1-5}
-37 & Replicate 2 GATK HC 3.2 & 63153 & 2585 & 799 \\ \cline{1-5}
+38 & Replicate 1 Samtools 1.1 & 62,919 & 2,937 & 701 \\
+38 & Replicate 2 Samtools 1.1 & 62,895 & 2,890 & 725 \\
+38 & Replicate 1 GATK HC 3.2 & 62,883 & 2,911 & 737 \\
+38 & Replicate 2 GATK HC 3.2 & 62,824 & 2,768 & 796 \\
+38 & Illm Plat GATK HC 3.2 & 62,878 & 2,792 & 742 \\
+37 & Replicate 1 Samtools 1.1 & 63,249 & 2,721 & 703 \\
+37 & Replicate 2 Samtools 1.1 & 63,224 & 2,686 & 728 \\
+37 & Replicate 1 GATK HC 3.2 & 63,211 & 2,693 & 741 \\
+37 & Replicate 2 GATK HC 3.2 & 63,153 & 2,585 & 799 \\ \cline{1-5}
 \hline
 \end{tabular}
 \caption{Call Rates for SNPs on NA12878 vs GIAB 0.2 in Highly Confident Areas of Genome on chr20}
@@ -138,11 +138,11 @@ Ref & Pipeline & Called (TP) & In GIAB(FP) & Not Called (FN) \\ \cline{1-5}
 \begin{tabular}{|l|l|c|c|c|c|}
 \hline
 Ref & Set A & Set B & A Only & B Only & Intersect \\ \cline{1-6}
-38 & Rep 1 Samtools & Rep 2 Samtools & 5316 & 4823 & 104884 \\ \cline{1-6}
-38 & Rep 1 GATK & Rep 2 GATK & 6318 & 4942 & 101376 \\ \cline{1-6}
-38 & Rep 1 GATK & Rep 1 Samtools&6880&9386&100814 \\ \cline{1-6}
-38 & Rep 2 GATK & Rep 2 Samtools&6155&9544&100163 \\ \cline{1-6}
-38 & Rep 2 GATK & Illumina Platinum&7175&8473&99143 \\ \cline{1-6}
+38 & Rep 1 Samtools & Rep 2 Samtools & 5,316 & 4,823 & 104,884 \\
+38 & Rep 1 GATK & Rep 2 GATK & 6,318 & 4,942 & 101,376 \\
+38 & Rep 1 GATK & Rep 1 Samtools&6,880 & 9,386 &100,814 \\
+38 & Rep 2 GATK & Rep 2 Samtools&6,155 & 9,544 &100,163 \\
+38 & Rep 2 GATK & Illumina Platinum&7,175 & 8,473 & 99,143 \\ \cline{1-6}
 \end{tabular}
 \caption{Intersection of called sites on chr20}
 \end{table}
@@ -158,7 +158,7 @@ Ref & Set A & Set B & A Only & B Only & Intersect \\ \cline{1-6}
 
             \end{block}
             \begin{block}{Conclusions}
-                The Illumina HiSeq X is a viable sequencing platform for our purposes and our proposed pipeline calls variants at an acceptable rate.  Our downsampling analysis suggests that for studies that are only interested in SNPs, the full coverage of a HiSeq X may be excessive but for discovering INDELs it is invaluable. Unfortunately the false discovery rate for INDELs remains high and suggests that our tools for these still need improvement in this respect. Since this work was started a new version of BWA has been proposed that supports mapping to alternate haplotypes, we plan to extend our analysis to incorporate an evaluation of the effects of mapping to these additional sequences.
+                Our findings show that the Illumina HiSeq X is a viable sequencing platform for discovering human genetic variation.  The downsampling analysis performed suggests that for studies that are only interested in SNPs, the full coverage of a HiSeq X may be excessive but for discovering INDELs it is invaluable. Unfortunately the false discovery rate for INDELs remains high and suggests that our tools for these still need improvement in this respect. Since this work was started a new version of BWA has been proposed that supports mapping to alternate haplotypes, we plan to extend our analysis to incorporate an evaluation of the effects of mapping to these additional sequences.
             \end{block}
             \begin{block}{Acknowledgements}
                 The Sanger's NPG and Sequencing R\&D Team for providing the data. Thomas Keene for editorial guidance. Joshua Randall for help with Graphs and R.
