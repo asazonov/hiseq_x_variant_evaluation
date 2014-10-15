@@ -2,8 +2,8 @@ require(ggplot2)
 require(reshape2)
 
 # Usage: R --vanilla --slave --args infile="data.tsv" outfile="plot.pdf" < downsampling-plot.R
-infile="data.tsv"
-outfile="plot.pdf"
+infile="downsampling.tsv"
+outfile="downsampling.png"
 width.cm="27"
 height.cm="12"
 
